@@ -1,0 +1,122 @@
+flowchart TD
+%% Security Incident Monitoring Process
+%% NIST CSF 2.0 — Detect / Respond / Recover
+%% Swimlanes are emulated with Mermaid `subgraph` blocks (one per role/team).
+%% Source draw.io file: csf2_incident_monitoring.drawio
+
+    title["<b>Security Incident Monitoring Process</b><br/>(NIST CSF 2.0: Detect / Respond / Recover)"]:::titleBar
+
+    subgraph LANE_SRC["Incident Source"]
+        direction TB
+        n01(["01. Adverse event<br/>detected"]):::startEvent
+    end
+
+    subgraph LANE_L1["Service Desk L1"]
+        direction TB
+        n02["02. Monitor & receive<br/>SIEM/EDR alert<br/>(DE.CM)"]:::task
+        n03["03. Initial triage<br/>& correlation<br/>(DE.AE)"]:::task
+        n04{"04. Valid<br/>incident?"}:::decision
+    end
+
+    subgraph LANE_SIEM["SIEM / SOAR / Ticketing"]
+        direction TB
+        n05[["05. False positive<br/>correction<br/>(subprocess)"]]:::subprocess
+        n06["06. Close as<br/>false positive"]:::closeFP
+        nEndFP(("End")):::endEventFP
+        n07_ticket[/"07. Create incident<br/>ticket / case record<br/>(RS.MA)"/]:::document
+    end
+
+    subgraph LANE_L2["L2 Triage"]
+        direction TB
+        n08_classify["08. Classify severity<br/>& assign SLA"]:::task
+        n09_dec{"09. P1/P2<br/>critical?"}:::decision
+        n10_queue["10. Standard<br/>response queue"]:::task
+    end
+
+    subgraph LANE_IM["Incident Manager / EMT"]
+        direction TB
+        n11_emt["11. Mobilise EMT<br/>& notify stakeholders<br/>(RS.CO)"]:::escalation
+        sj1((" + ")):::junction
+    end
+
+    subgraph LANE_L3["L3 Response / Forensics"]
+        direction TB
+        n12_analyse["12. Analyse incident<br/>& collect evidence<br/>(RS.AN)"]:::task
+        nEv[/"Evidence<br/>record"/]:::evidence
+        n13_contain["13. Contain threat<br/>(RS.MI)"]:::task
+        n14_dec{"14. Containment<br/>effective?"}:::decision
+        n15_erad["15. Eradicate threat<br/>& restore systems<br/>(RC.RP)"]:::task
+    end
+
+    subgraph LANE_RC["Risk / Compliance / Post-Incident Review"]
+        direction TB
+        n16_dec{"16. Recovery<br/>validated?"}:::decision
+        n17_comm["17. Recovery<br/>communication<br/>(RC.CO)"]:::task
+        n18_rca["18. Root cause analysis<br/>& lessons learned"]:::task
+        n19_reg[/"19. Update risk register<br/>& playbooks"/]:::document
+        nEnd(("End")):::endEvent
+    end
+
+    %% Title anchor (invisible link to keep title at top)
+    title -.- n01
+
+    %% ===== Main flow =====
+    n01 --> n02
+    n02 --> n03
+    n03 --> n04
+
+    n04 -- "No"  --> n05
+    n04 -- "Yes" --> n07_ticket
+
+    n05 --> n06
+    n06 --> nEndFP
+
+    n07_ticket --> n08_classify
+    n08_classify --> n09_dec
+
+    n09_dec -- "P3/P4" --> n10_queue
+    n09_dec == "P1/P2" ==> n11_emt
+
+    n10_queue --> sj1
+    n11_emt   --> sj1
+    sj1 --> n12_analyse
+
+    n12_analyse -.-> nEv
+    n12_analyse --> n13_contain
+    n13_contain --> n14_dec
+
+    n14_dec -- "No"  --> n12_analyse
+    n14_dec -- "Yes" --> n15_erad
+
+    n15_erad --> n16_dec
+
+    n16_dec -- "No"  --> n15_erad
+    n16_dec -- "Yes" --> n17_comm
+
+    n17_comm --> n18_rca
+    n18_rca -.-> n19_reg
+    n18_rca --> nEnd
+
+    %% ===== Styles =====
+    classDef titleBar     fill:#e1e7ef,stroke:#6c8ebf,stroke-width:2px,color:#222,font-weight:bold
+    classDef startEvent   fill:#d5e8d4,stroke:#82b366,stroke-width:2px,color:#222
+    classDef endEvent     fill:#d5e8d4,stroke:#82b366,stroke-width:3px,color:#222
+    classDef endEventFP   fill:#f8cecc,stroke:#b85450,stroke-width:2px,color:#222
+    classDef task         fill:#dae8fc,stroke:#6c8ebf,color:#222
+    classDef escalation   fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#222
+    classDef decision     fill:#fff2cc,stroke:#d6b656,color:#222
+    classDef document     fill:#fff2cc,stroke:#d6b656,color:#222
+    classDef evidence     fill:#f5f5f5,stroke:#666666,color:#222
+    classDef subprocess   fill:#e1d5e7,stroke:#9673a6,stroke-width:2px,color:#222
+    classDef closeFP      fill:#f8cecc,stroke:#b85450,color:#222
+    classDef junction     fill:#ffffff,stroke:#444,stroke-width:2px,color:#222
+
+    style LANE_SRC  fill:#ffffff,stroke:#888,stroke-width:1px
+    style LANE_L1   fill:#fafafa,stroke:#888,stroke-width:1px
+    style LANE_SIEM fill:#ffffff,stroke:#888,stroke-width:1px
+    style LANE_L2   fill:#fafafa,stroke:#888,stroke-width:1px
+    style LANE_IM   fill:#ffffff,stroke:#888,stroke-width:1px
+    style LANE_L3   fill:#fafafa,stroke:#888,stroke-width:1px
+    style LANE_RC   fill:#ffffff,stroke:#888,stroke-width:1px
+
+    linkStyle 0 stroke:transparent,stroke-width:0px
