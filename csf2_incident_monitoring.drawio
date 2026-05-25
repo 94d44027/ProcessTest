@@ -1,309 +1,174 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" agent="ProcessDiagramSkill">
-  <diagram name="CSF 2.0 Incident Monitoring">
-    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="2000" math="0" shadow="0">
+  <diagram name="CSF 2.0 Incident Monitoring" id="0">
+    <mxGraphModel dx="1331" dy="853" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- ===========================================================
-             HORIZONTAL TITLE (top of page)
-             =========================================================== -->
-        <mxCell id="titleBar" value="Security Incident Monitoring Process&#10;(NIST CSF 2.0: Detect / Respond / Recover)"
-                style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1e7ef;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="820" height="50" as="geometry" />
+        <mxCell id="titleBar" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1e7ef;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;" value="Security Incident Monitoring Process&#xa;(NIST CSF 2.0: Detect / Respond / Recover)" vertex="1">
+          <mxGeometry height="50" width="820" x="40" y="20" as="geometry" />
         </mxCell>
-
-        <!-- ===========================================================
-             SWIMLANES (top-level, stacked vertically, vertical title on left)
-             Each lane is a swimlane with horizontal=0 so its title bar
-             is rendered as a vertical strip on the LEFT side of the lane.
-             startSize=30 -> title bar width = 30 px.
-             Page-y origin for lanes: 90 (title 20..70 + 20 gap)
-             Lane heights (chosen to fit content + padding):
-               Source: 100  -> 90..190
-               L1:     240  -> 190..430
-               SIEM:   220  -> 430..650
-               L2:     240  -> 650..890
-               IM:     220  -> 890..1110
-               L3:     320  -> 1110..1430
-               RC:     300  -> 1430..1730
-             Each lane: x=40, width=820. Content (shapes) sit at x >= 40+30=70.
-             =========================================================== -->
-
-        <mxCell id="laneSource" value="Incident Source"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="90" width="820" height="100" as="geometry" />
+        <mxCell id="laneSource" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;" value="Incident Source" vertex="1">
+          <mxGeometry height="100" width="820" x="40" y="90" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneL1" value="Service Desk L1"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="190" width="820" height="240" as="geometry" />
+        <mxCell id="laneL1" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;" value="Service Desk L1" vertex="1">
+          <mxGeometry height="240" width="820" x="40" y="190" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneSiem" value="SIEM / SOAR / Ticketing"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="430" width="820" height="220" as="geometry" />
+        <mxCell id="laneSiem" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;" value="SIEM / SOAR / Ticketing" vertex="1">
+          <mxGeometry height="220" width="820" x="40" y="430" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneL2" value="L2 Triage"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="650" width="820" height="240" as="geometry" />
+        <mxCell id="laneL2" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;" value="L2 Triage" vertex="1">
+          <mxGeometry height="240" width="820" x="40" y="650" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneIM" value="Incident Manager / EMT"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="890" width="820" height="220" as="geometry" />
+        <mxCell id="laneIM" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;" value="Incident Manager / EMT" vertex="1">
+          <mxGeometry height="220" width="820" x="40" y="890" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneL3" value="L3 Response / Forensics"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="1110" width="820" height="320" as="geometry" />
+        <mxCell id="laneL3" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;" value="L3 Response / Forensics" vertex="1">
+          <mxGeometry height="320" width="820" x="40" y="1110" as="geometry" />
         </mxCell>
-
-        <mxCell id="laneRC" value="Risk / Compliance / Post-Incident Review"
-                style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;"
-                vertex="1" parent="1">
-          <mxGeometry x="40" y="1430" width="820" height="300" as="geometry" />
+        <mxCell id="nEv" parent="laneL3" style="shape=document;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;boundedLbl=1;" value="Evidence&#xa;record" vertex="1">
+          <mxGeometry height="60" width="120" x="560" y="90" as="geometry" />
         </mxCell>
-
-        <!-- ===========================================================
-             SHAPES (parent=1, page coordinates)
-             Lane page-y ranges (above). Shapes positioned to sit cleanly inside.
-             Main column center x = 470 (shape x=400, w=140).
-             Right column center x = 700 (shape x=620, w=160).
-             Left column center x = 240 (shape x=170, w=160).
-             =========================================================== -->
-
-        <!-- 01 Start (Source lane: 90..190) -->
-        <mxCell id="n01" value="01. Adverse event&#10;detected" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="410" y="115" width="120" height="55" as="geometry" />
+        <mxCell id="laneRC" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;" value="Risk / Compliance / Post-Incident Review" vertex="1">
+          <mxGeometry height="350" width="820" x="40" y="1430" as="geometry" />
         </mxCell>
-
-        <!-- 02 Monitor & receive alert (L1: 190..430) -->
-        <mxCell id="n02" value="02. Monitor &amp; receive&#10;SIEM/EDR alert&#10;(DE.CM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="215" width="140" height="60" as="geometry" />
+        <mxCell id="n01" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="01. Adverse event&#xa;detected" vertex="1">
+          <mxGeometry height="55" width="120" x="410" y="115" as="geometry" />
         </mxCell>
-
-        <!-- 03 Initial triage (L1) -->
-        <mxCell id="n03" value="03. Initial triage&#10;&amp; correlation&#10;(DE.AE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="295" width="140" height="60" as="geometry" />
+        <mxCell id="n02" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="02. Monitor &amp; receive&#xa;SIEM/EDR alert&#xa;(DE.CM)" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="215" as="geometry" />
         </mxCell>
-
-        <!-- 04 Decision: Valid incident? (L1) -->
-        <mxCell id="n04" value="04. Valid&#10;incident?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="420" y="370" width="100" height="55" as="geometry" />
+        <mxCell id="n03" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="03. Initial triage&#xa;&amp; correlation&#xa;(DE.AE)" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="295" as="geometry" />
         </mxCell>
-
-        <!-- 05 False positive correction (SUBPROCESS, SIEM: 430..650, right) -->
-        <mxCell id="n05" value="05. False positive&#10;correction&#10;(subprocess)" style="shape=process;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="620" y="445" width="140" height="65" as="geometry" />
+        <mxCell id="n04" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="04. Valid&#xa;incident?" vertex="1">
+          <mxGeometry height="55" width="100" x="420" y="370" as="geometry" />
         </mxCell>
-
-        <!-- 06 Close as false positive (SIEM, right) -->
-        <mxCell id="n06" value="06. Close as&#10;false positive" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="535" width="140" height="50" as="geometry" />
+        <mxCell id="n05" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="05. False positive&#xa;correction&#xa;(subprocess)" vertex="1">
+          <mxGeometry height="65" width="140" x="620" y="445" as="geometry" />
         </mxCell>
-
-        <!-- End FP (SIEM) -->
-        <mxCell id="nEndFP" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="660" y="610" width="60" height="40" as="geometry" />
+        <mxCell id="n06" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="06. Close as&#xa;false positive" vertex="1">
+          <mxGeometry height="50" width="140" x="620" y="535" as="geometry" />
         </mxCell>
-
-        <!-- 07 Create ticket (SIEM, document) -->
-        <mxCell id="n07_ticket" value="07. Create incident&#10;ticket / case record&#10;(RS.MA)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="490" width="140" height="80" as="geometry" />
+        <mxCell id="nEndFP" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" value="End" vertex="1">
+          <mxGeometry height="40" width="60" x="660" y="610" as="geometry" />
         </mxCell>
-
-        <!-- 08 Classify severity (L2: 650..890) -->
-        <mxCell id="n08_classify" value="08. Classify severity&#10;&amp; assign SLA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="690" width="140" height="60" as="geometry" />
+        <mxCell id="n07_ticket" parent="1" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" value="07. Create incident&#xa;ticket / case record&#xa;(RS.MA)" vertex="1">
+          <mxGeometry height="80" width="140" x="400" y="490" as="geometry" />
         </mxCell>
-
-        <!-- 09 Decision: P1/P2 critical? (L2) -->
-        <mxCell id="n09_dec" value="09. P1/P2&#10;critical?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="420" y="780" width="100" height="60" as="geometry" />
+        <mxCell id="n08_classify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="08. Classify severity&#xa;&amp; assign SLA" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="690" as="geometry" />
         </mxCell>
-
-        <!-- 10 Standard response queue (L2, right) -->
-        <mxCell id="n10_queue" value="10. Standard&#10;response queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="620" y="785" width="150" height="55" as="geometry" />
+        <mxCell id="n09_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="09. P1/P2&#xa;critical?" vertex="1">
+          <mxGeometry height="60" width="100" x="420" y="780" as="geometry" />
         </mxCell>
-
-        <!-- 11 Mobilise EMT (IM: 890..1110, left, escalation) -->
-        <mxCell id="n11_emt" value="11. Mobilise EMT&#10;&amp; notify stakeholders&#10;(RS.CO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="170" y="930" width="160" height="70" as="geometry" />
+        <mxCell id="n10_queue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="10. Standard&#xa;response queue" vertex="1">
+          <mxGeometry height="55" width="150" x="620" y="785" as="geometry" />
         </mxCell>
-
-        <!-- Summing junction (IM lane, just above L3 boundary) -->
-        <mxCell id="sj1" value="" style="shape=mxgraph.flowchart.or;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="455" y="1040" width="30" height="30" as="geometry" />
+        <mxCell id="n11_emt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="11. Mobilise EMT&#xa;&amp; notify stakeholders&#xa;(RS.CO)" vertex="1">
+          <mxGeometry height="70" width="160" x="170" y="930" as="geometry" />
         </mxCell>
-
-        <!-- 12 Analyse incident & collect evidence (L3: 1110..1430) -->
-        <mxCell id="n12_analyse" value="12. Analyse incident&#10;&amp; collect evidence&#10;(RS.AN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1135" width="140" height="70" as="geometry" />
+        <mxCell id="sj1" parent="1" style="shape=mxgraph.flowchart.or;html=1;backgroundOutline=1;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="455" y="1040" as="geometry" />
         </mxCell>
-
-        <!-- Evidence record (L3 right) -->
-        <mxCell id="nEv" value="Evidence&#10;record" style="shape=document;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;boundedLbl=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="1140" width="120" height="60" as="geometry" />
+        <mxCell id="n12_analyse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="12. Analyse incident&#xa;&amp; collect evidence&#xa;(RS.AN)" vertex="1">
+          <mxGeometry height="70" width="140" x="400" y="1135" as="geometry" />
         </mxCell>
-
-        <!-- 13 Contain threat (L3) -->
-        <mxCell id="n13_contain" value="13. Contain threat&#10;(RS.MI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1230" width="140" height="55" as="geometry" />
+        <mxCell id="n13_contain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="13. Contain threat&#xa;(RS.MI)" vertex="1">
+          <mxGeometry height="55" width="140" x="400" y="1230" as="geometry" />
         </mxCell>
-
-        <!-- 14 Decision: Containment effective? (L3) -->
-        <mxCell id="n14_dec" value="14. Containment&#10;effective?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="420" y="1310" width="100" height="60" as="geometry" />
+        <mxCell id="n14_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="14. Containment&#xa;effective?" vertex="1">
+          <mxGeometry height="60" width="100" x="420" y="1310" as="geometry" />
         </mxCell>
-
-        <!-- 15 Eradicate & restore (L3) -->
-        <mxCell id="n15_erad" value="15. Eradicate threat&#10;&amp; restore systems&#10;(RC.RP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1390" width="140" height="55" as="geometry" />
+        <mxCell id="n15_erad" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="15. Eradicate threat&#xa;&amp; restore systems&#xa;(RC.RP)" vertex="1">
+          <mxGeometry height="55" width="140" x="400" y="1390" as="geometry" />
         </mxCell>
-
-        <!-- 16 Recovery validated? (RC: 1430..1730) -->
-        <mxCell id="n16_dec" value="16. Recovery&#10;validated?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="420" y="1465" width="100" height="60" as="geometry" />
+        <mxCell id="n16_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="16. Recovery&#xa;validated?" vertex="1">
+          <mxGeometry height="60" width="100" x="420" y="1465" as="geometry" />
         </mxCell>
-
-        <!-- 17 Recovery communication (RC) -->
-        <mxCell id="n17_comm" value="17. Recovery&#10;communication&#10;(RC.CO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1545" width="140" height="60" as="geometry" />
+        <mxCell id="n17_comm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="17. Recovery&#xa;communication&#xa;(RC.CO)" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="1545" as="geometry" />
         </mxCell>
-
-        <!-- 18 Root cause & lessons learned (RC) -->
-        <mxCell id="n18_rca" value="18. Root cause analysis&#10;&amp; lessons learned" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1625" width="140" height="55" as="geometry" />
+        <mxCell id="n18_rca" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="18. Root cause analysis&#xa;&amp; lessons learned" vertex="1">
+          <mxGeometry height="55" width="140" x="400" y="1625" as="geometry" />
         </mxCell>
-
-        <!-- 19 Update risk register & playbooks (RC, document) -->
-        <mxCell id="n19_reg" value="19. Update risk register&#10;&amp; playbooks" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="1620" width="150" height="65" as="geometry" />
+        <mxCell id="n19_reg" parent="1" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" value="19. Update risk register&#xa;&amp; playbooks" vertex="1">
+          <mxGeometry height="65" width="150" x="620" y="1620" as="geometry" />
         </mxCell>
-
-        <!-- End -->
-        <mxCell id="nEnd" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="440" y="1700" width="60" height="60" as="geometry" />
+        <mxCell id="nEnd" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" value="End" vertex="1">
+          <mxGeometry height="60" width="60" x="440" y="1700" as="geometry" />
         </mxCell>
-
-        <!-- ===========================================================
-             EDGES
-             =========================================================== -->
-        <mxCell id="e_01_02" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n01" target="n02">
+        <mxCell id="e_01_02" edge="1" parent="1" source="n01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n02">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_02_03" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n02" target="n03">
+        <mxCell id="e_02_03" edge="1" parent="1" source="n02" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n03">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_03_04" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n03" target="n04">
+        <mxCell id="e_03_04" edge="1" parent="1" source="n03" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n04">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="e_04_05" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="n04" target="n05">
+        <mxCell id="e_04_05" edge="1" parent="1" source="n04" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n05" value="No">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- 05 subprocess -> 06 close as FP -->
-        <mxCell id="e_05_06" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n05" target="n06">
+        <mxCell id="e_05_06" edge="1" parent="1" source="n05" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n06">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 06 -> End FP -->
-        <mxCell id="e_06_endfp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n06" target="nEndFP">
+        <mxCell id="e_06_endfp" edge="1" parent="1" source="n06" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="nEndFP">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 04 Yes -> 07 ticket -->
-        <mxCell id="e_04_07" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n04" target="n07_ticket">
+        <mxCell id="e_04_07" edge="1" parent="1" source="n04" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n07_ticket" value="Yes">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 07 -> 08 classify -->
-        <mxCell id="e_07_08" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n07_ticket" target="n08_classify">
+        <mxCell id="e_07_08" edge="1" parent="1" source="n07_ticket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n08_classify">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 08 -> 09 decision -->
-        <mxCell id="e_08_09" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n08_classify" target="n09_dec">
+        <mxCell id="e_08_09" edge="1" parent="1" source="n08_classify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n09_dec">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 09 P3/P4 -> 10 standard queue -->
-        <mxCell id="e_09_10" value="P3/P4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n09_dec" target="n10_queue">
+        <mxCell id="e_09_10" edge="1" parent="1" source="n09_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="n10_queue" value="P3/P4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 09 P1/P2 -> 11 EMT -->
-        <mxCell id="e_09_11" value="P1/P2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="n09_dec" target="n11_emt">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="e_09_11" edge="1" parent="1" source="n09_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n11_emt" value="P1/P2">
+          <mxGeometry relative="1" x="-0.6551" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
               <mxPoint x="250" y="810" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- 10 -> sj -->
-        <mxCell id="e_10_sj" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n10_queue" target="sj1">
+        <mxCell id="e_10_sj" edge="1" parent="1" source="n10_queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sj1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 11 -> sj -->
-        <mxCell id="e_11_sj" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n11_emt" target="sj1">
+        <mxCell id="e_11_sj" edge="1" parent="1" source="n11_emt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sj1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- sj -> 12 analyse -->
-        <mxCell id="e_sj_12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="sj1" target="n12_analyse">
+        <mxCell id="e_sj_12" edge="1" parent="1" source="sj1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n12_analyse">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 12 -> evidence (dashed) -->
-        <mxCell id="e_12_ev" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n12_analyse" target="nEv">
+        <mxCell id="e_12_ev" edge="1" parent="1" source="n12_analyse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="nEv">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 12 -> 13 contain -->
-        <mxCell id="e_12_13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n12_analyse" target="n13_contain">
+        <mxCell id="e_12_13" edge="1" parent="1" source="n12_analyse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n13_contain">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 13 -> 14 decision -->
-        <mxCell id="e_13_14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n13_contain" target="n14_dec">
+        <mxCell id="e_13_14" edge="1" parent="1" source="n13_contain" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n14_dec">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 14 No -> back to 12 -->
-        <mxCell id="e_14_back" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n14_dec" target="n12_analyse">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="e_14_back" edge="1" parent="1" source="n14_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="n12_analyse" value="No">
+          <mxGeometry relative="1" x="-0.9403" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
               <mxPoint x="780" y="1340" />
               <mxPoint x="780" y="1170" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- 14 Yes -> 15 eradicate -->
-        <mxCell id="e_14_15" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n14_dec" target="n15_erad">
+        <mxCell id="e_14_15" edge="1" parent="1" source="n14_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n15_erad" value="Yes">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 15 -> 16 decision -->
-        <mxCell id="e_15_16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n15_erad" target="n16_dec">
+        <mxCell id="e_15_16" edge="1" parent="1" source="n15_erad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n16_dec">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 16 No -> back to 15 -->
-        <mxCell id="e_16_back" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n16_dec" target="n15_erad">
+        <mxCell id="e_16_back" edge="1" parent="1" source="n16_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="n15_erad" value="No">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="780" y="1495" />
@@ -311,27 +176,18 @@
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- 16 Yes -> 17 comm -->
-        <mxCell id="e_16_17" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n16_dec" target="n17_comm">
+        <mxCell id="e_16_17" edge="1" parent="1" source="n16_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n17_comm" value="Yes">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 17 -> 18 rca -->
-        <mxCell id="e_17_18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n17_comm" target="n18_rca">
+        <mxCell id="e_17_18" edge="1" parent="1" source="n17_comm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="n18_rca">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 18 -> 19 register (dashed) -->
-        <mxCell id="e_18_19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="n18_rca" target="n19_reg">
+        <mxCell id="e_18_19" edge="1" parent="1" source="n18_rca" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="n19_reg">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 18 -> End -->
-        <mxCell id="e_18_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="n18_rca" target="nEnd">
+        <mxCell id="e_18_end" edge="1" parent="1" source="n18_rca" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="nEnd">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>
