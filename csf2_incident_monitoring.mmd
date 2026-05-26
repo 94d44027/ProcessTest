@@ -35,25 +35,26 @@ flowchart TD
 
     subgraph LANE_IM["Incident Manager / EMT"]
         direction TB
-        n11_emt["11. Mobilise EMT<br/>& notify stakeholders<br/>(RS.CO)"]:::escalation
+        n11_threat["11. Notify Threat Hunting"]:::task
+        n12_emt["12. Mobilise EMT<br/>& notify stakeholders<br/>(RS.CO)"]:::escalation
         sj1((" + ")):::junction
     end
 
     subgraph LANE_L3["L3 Response / Forensics"]
         direction TB
-        n12_analyse["12. Analyse incident<br/>& collect evidence<br/>(RS.AN)"]:::task
+        n13_analyse["13. Analyse incident<br/>& collect evidence<br/>(RS.AN)"]:::task
         nEv[/"Evidence<br/>record"/]:::evidence
-        n13_contain["13. Contain threat<br/>(RS.MI)"]:::task
-        n14_dec{"14. Containment<br/>effective?"}:::decision
-        n15_erad["15. Eradicate threat<br/>& restore systems<br/>(RC.RP)"]:::task
+        n14_contain["14. Contain threat<br/>(RS.MI)"]:::task
+        n15_dec{"15. Containment<br/>effective?"}:::decision
+        n16_erad["16. Eradicate threat<br/>& restore systems<br/>(RC.RP)"]:::task
     end
 
     subgraph LANE_RC["Risk / Compliance / Post-Incident Review"]
         direction TB
-        n16_dec{"16. Recovery<br/>validated?"}:::decision
-        n17_comm["17. Recovery<br/>communication<br/>(RC.CO)"]:::task
-        n18_rca["18. Root cause analysis<br/>& lessons learned"]:::task
-        n19_reg[/"19. Update risk register<br/>& playbooks"/]:::document
+        n17_dec{"17. Recovery<br/>validated?"}:::decision
+        n18_comm["18. Recovery<br/>communication<br/>(RC.CO)"]:::task
+        n19_rca["19. Root cause analysis<br/>& lessons learned"]:::task
+        n20_reg[/"20. Update risk register<br/>& playbooks"/]:::document
         nEnd(("End")):::endEvent
     end
 
@@ -75,27 +76,28 @@ flowchart TD
     n08_classify --> n09_dec
 
     n09_dec -- "P3/P4" --> n10_queue
-    n09_dec == "P1/P2" ==> n11_emt
+    n09_dec == "P1/P2" ==> n12_emt
 
-    n10_queue --> sj1
-    n11_emt   --> sj1
-    sj1 --> n12_analyse
+    n10_queue --> n11_threat
+    n11_threat --> sj1
+    n12_emt    --> sj1
+    sj1 --> n13_analyse
 
-    n12_analyse -.-> nEv
-    n12_analyse --> n13_contain
-    n13_contain --> n14_dec
+    n13_analyse -.-> nEv
+    n13_analyse --> n14_contain
+    n14_contain --> n15_dec
 
-    n14_dec -- "No"  --> n12_analyse
-    n14_dec -- "Yes" --> n15_erad
+    n15_dec -- "No"  --> n13_analyse
+    n15_dec -- "Yes" --> n16_erad
 
-    n15_erad --> n16_dec
+    n16_erad --> n17_dec
 
-    n16_dec -- "No"  --> n15_erad
-    n16_dec -- "Yes" --> n17_comm
+    n17_dec -- "No"  --> n16_erad
+    n17_dec -- "Yes" --> n18_comm
 
-    n17_comm --> n18_rca
-    n18_rca -.-> n19_reg
-    n18_rca --> nEnd
+    n18_comm --> n19_rca
+    n19_rca -.-> n20_reg
+    n19_rca --> nEnd
 
     %% ===== Styles =====
     classDef titleBar     fill:#e1e7ef,stroke:#6c8ebf,stroke-width:2px,color:#222,font-weight:bold
