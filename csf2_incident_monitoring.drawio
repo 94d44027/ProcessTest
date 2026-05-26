@@ -22,7 +22,7 @@
         <mxCell id="laneIM" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=#f5f5f5;swimlaneFillColor=#ffffff;fontStyle=1;" value="Incident Manager / EMT" vertex="1">
           <mxGeometry height="220" width="820" x="40" y="890" as="geometry" />
         </mxCell>
-        <mxCell id="T0DByfoen8TXfAL6Z4LJ-1" parent="laneIM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="10. Notify Threat Hunting" vertex="1">
+        <mxCell id="T0DByfoen8TXfAL6Z4LJ-1" parent="laneIM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="11. Notify Threat Hunting" vertex="1">
           <mxGeometry height="55" width="150" x="470" y="55" as="geometry" />
         </mxCell>
         <mxCell id="laneL3" parent="1" style="shape=swimlane;html=1;startSize=30;horizontal=0;collapsible=0;swimlaneFillColor=#ffffff;fontStyle=1;" value="L3 Response / Forensics" vertex="1">
@@ -67,34 +67,34 @@
         <mxCell id="n10_queue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="10. Standard&#xa;response queue" vertex="1">
           <mxGeometry height="55" width="150" x="620" y="785" as="geometry" />
         </mxCell>
-        <mxCell id="n11_emt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="11. Mobilise EMT&#xa;&amp; notify stakeholders&#xa;(RS.CO)" vertex="1">
+        <mxCell id="n11_emt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="12. Mobilise EMT&#xa;&amp; notify stakeholders&#xa;(RS.CO)" vertex="1">
           <mxGeometry height="70" width="160" x="170" y="930" as="geometry" />
         </mxCell>
         <mxCell id="sj1" parent="1" style="shape=mxgraph.flowchart.or;html=1;backgroundOutline=1;" value="" vertex="1">
           <mxGeometry height="30" width="30" x="455" y="1040" as="geometry" />
         </mxCell>
-        <mxCell id="n12_analyse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="12. Analyse incident&#xa;&amp; collect evidence&#xa;(RS.AN)" vertex="1">
+        <mxCell id="n12_analyse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="13. Analyse incident&#xa;&amp; collect evidence&#xa;(RS.AN)" vertex="1">
           <mxGeometry height="70" width="140" x="400" y="1135" as="geometry" />
         </mxCell>
-        <mxCell id="n13_contain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="13. Contain threat&#xa;(RS.MI)" vertex="1">
+        <mxCell id="n13_contain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="14. Contain threat&#xa;(RS.MI)" vertex="1">
           <mxGeometry height="55" width="140" x="400" y="1230" as="geometry" />
         </mxCell>
-        <mxCell id="n14_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="14. Containment&#xa;effective?" vertex="1">
+        <mxCell id="n14_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="15. Containment&#xa;effective?" vertex="1">
           <mxGeometry height="60" width="100" x="420" y="1310" as="geometry" />
         </mxCell>
-        <mxCell id="n15_erad" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="15. Eradicate threat&#xa;&amp; restore systems&#xa;(RC.RP)" vertex="1">
+        <mxCell id="n15_erad" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="16. Eradicate threat&#xa;&amp; restore systems&#xa;(RC.RP)" vertex="1">
           <mxGeometry height="55" width="140" x="400" y="1390" as="geometry" />
         </mxCell>
-        <mxCell id="n16_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="16. Recovery&#xa;validated?" vertex="1">
+        <mxCell id="n16_dec" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="17. Recovery&#xa;validated?" vertex="1">
           <mxGeometry height="60" width="100" x="420" y="1465" as="geometry" />
         </mxCell>
-        <mxCell id="n17_comm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="17. Recovery&#xa;communication&#xa;(RC.CO)" vertex="1">
+        <mxCell id="n17_comm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="18. Recovery&#xa;communication&#xa;(RC.CO)" vertex="1">
           <mxGeometry height="60" width="140" x="400" y="1545" as="geometry" />
         </mxCell>
-        <mxCell id="n18_rca" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="18. Root cause analysis&#xa;&amp; lessons learned" vertex="1">
+        <mxCell id="n18_rca" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="19. Root cause analysis&#xa;&amp; lessons learned" vertex="1">
           <mxGeometry height="55" width="140" x="400" y="1625" as="geometry" />
         </mxCell>
-        <mxCell id="n19_reg" parent="1" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" value="19. Update risk register&#xa;&amp; playbooks" vertex="1">
+        <mxCell id="n19_reg" parent="1" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;boundedLbl=1;" value="20. Update risk register&#xa;&amp; playbooks" vertex="1">
           <mxGeometry height="65" width="150" x="620" y="1620" as="geometry" />
         </mxCell>
         <mxCell id="nEnd" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" value="End" vertex="1">
